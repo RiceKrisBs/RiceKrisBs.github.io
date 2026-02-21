@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kris's Running Zone!!</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrapper">
+    <span class="marquee-content">
+      🏃 WELCOME TO THE RUNNING ZONE 🏃 PACE CALCULATORS ★ RACE PREDICTOR ★ RACE RESULTS 🏃 LET'S GO!! 🏃
+    </span>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html">🏠 HOME</a>
+    <a href="running.html" class="active">🏃 RUNNING ZONE</a>
+  </nav>
+
+  <!-- PAGE TITLE -->
+  <h1 class="page-title">🏃 THE RUNNING ZONE!! 🏃</h1>
+
+  <main>
+
+    <!-- PACE / DISTANCE / TIME CALCULATOR -->
+    <section id="pace-calculator">
+      <h2 class="section-title">⚡ PACE CALCULATOR ⚡</h2>
+      <p class="calc-instructions">
+        Fill in ANY TWO fields and leave ONE blank!! Click the button to calculate the missing value!!
+      </p>
+      <div class="calc-grid">
+        <div class="calc-field">
+          <label for="calc-distance">DISTANCE</label>
+          <input type="number" id="calc-distance" placeholder="e.g. 26.2" step="0.01" min="0">
+          <select id="calc-distance-unit">
+            <option value="miles">Miles</option>
+            <option value="km">Kilometers</option>
+          </select>
+          <select onchange="applyPresetDistance(this.value); this.value=''">
+            <option value="">-- common distances --</option>
+            <option value="1|miles">1 Mile</option>
+            <option value="5|miles">5 Mile</option>
+            <option value="5|km">5K</option>
+            <option value="10|km">10K</option>
+            <option value="15|km">15K</option>
+            <option value="10|miles">10 Mile</option>
+            <option value="13.1|miles">Half Marathon</option>
+            <option value="26.2|miles">Marathon</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="calc-time">TIME</label>
+          <input type="text" id="calc-time" placeholder="h:mm:ss or m:ss">
+        </div>
+        <div class="calc-field">
+          <label for="calc-pace">PACE</label>
+          <input type="text" id="calc-pace" placeholder="m:ss">
+          <select id="calc-pace-unit">
+            <option value="miles">Per Mile</option>
+            <option value="km">Per Km</option>
+          </select>
+        </div>
+      </div>
+      <button id="calc-btn" class="btn-90s" onclick="calculatePaceDistanceTime()">** CALCULATE!! **</button>
+      <div id="calc-result" class="calc-result"></div>
+      <button class="btn-90s btn-small" onclick="clearLastCalculated()">CLEAR RESULT</button>
+      <button class="btn-90s btn-small" onclick="clearPaceCalculator()">CLEAR ALL</button>
+    </section>
+
+    <hr class="divider">
+
+    <!-- RACE TIME PREDICTOR -->
+    <section id="race-predictor">
+      <h2 class="section-title">🏆 RACE TIME PREDICTOR 🏆</h2>
+      <p class="calc-instructions">
+        Enter a recent race result!! I'll predict your finish times for all distances using SCIENCE!!
+      </p>
+      <div class="calc-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))">
+        <div class="calc-field">
+          <label for="pred-distance">YOUR RACE DISTANCE</label>
+          <select id="pred-distance">
+            <option value="1609.34">1 Mile</option>
+            <option value="5000">5K</option>
+            <option value="8046.72">5 Mile</option>
+            <option value="10000" selected>10K</option>
+            <option value="15000">15K</option>
+            <option value="16093.4">10 Mile</option>
+            <option value="21097.5">Half Marathon</option>
+            <option value="42195">Marathon</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="pred-time">YOUR FINISH TIME</label>
+          <input type="text" id="pred-time" placeholder="h:mm:ss or m:ss">
+        </div>
+      </div>
+      <button class="btn-90s" onclick="predictRaceTimes()">** PREDICT!! **</button>
+      <div id="pred-result" class="pred-result"></div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- UPCOMING RACES -->
+    <section id="upcoming-races">
+      <h2 class="section-title">📅 UPCOMING RACES 📅</h2>
+      <div class="table-scroll">
+        <div id="upcoming-races-table">
+          <p class="no-data">Loading...</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- PAST RACE RESULTS -->
+    <section id="past-races">
+      <h2 class="section-title">🏅 PAST RACE RESULTS 🏅</h2>
+      <div class="table-scroll">
+        <div id="past-races-table">
+          <p class="no-data">Loading...</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Kris's Running Zone!! All Rights Reserved (probably)!!</p>
+    <p style="margin-top:6px; color:#FF00FF;">
+      Race predictions use the <a href="https://en.wikipedia.org/wiki/Peter_Riegel#Race_time_prediction" style="color:#00FFFF" target="_blank">Riegel Formula</a>
+    </p>
+  </footer>
+
+  <script src="js/calculators.js"></script>
+  <script src="js/races.js"></script>
+</body>
+</html>

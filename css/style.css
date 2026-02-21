@@ -1,0 +1,304 @@
+/* ===== RESET ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== BODY — starfield background ===== */
+body {
+  background-color: #000022;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px);
+  background-size: 50px 50px, 25px 25px;
+  background-position: 0 0, 12px 12px;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+  color: #FFFF00;
+  min-height: 100vh;
+}
+
+/* ===== MARQUEE (CSS-based, works on mobile) ===== */
+.marquee-wrapper {
+  overflow: hidden;
+  background: #FF00FF;
+  padding: 4px 0;
+  white-space: nowrap;
+}
+.marquee-content {
+  display: inline-block;
+  animation: scroll-left 20s linear infinite;
+  color: #000000;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding-left: 100%;
+}
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* ===== NAV ===== */
+nav {
+  background: #000000;
+  border-bottom: 4px solid #FF00FF;
+  border-top: 4px solid #00FFFF;
+  padding: 12px;
+  text-align: center;
+}
+nav a {
+  color: #00FFFF;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 4px 16px;
+  text-shadow: 0 0 8px #00FFFF;
+  border: 2px solid #00FFFF;
+  padding: 4px 14px;
+  display: inline-block;
+}
+nav a:hover {
+  background: #00FFFF;
+  color: #000000;
+}
+nav a.active {
+  background: #00FFFF;
+  color: #000000;
+}
+
+/* ===== PAGE TITLE ===== */
+h1.page-title {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: #FF00FF;
+  text-shadow: 3px 3px #00FFFF, 6px 6px #FFFF00;
+  text-align: center;
+  padding: 24px 20px 12px;
+  text-transform: uppercase;
+}
+
+/* ===== SECTION HEADINGS ===== */
+h2.section-title {
+  color: #00FF00;
+  text-shadow: 2px 2px #FF00FF;
+  text-align: center;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  margin-bottom: 16px;
+  border: 3px dashed #00FF00;
+  padding: 8px;
+}
+
+/* ===== BLINK ANIMATION ===== */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ===== MAIN CONTENT WRAPPER ===== */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+section {
+  background: rgba(0, 0, 0, 0.7);
+  border: 3px solid #FF00FF;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+/* ===== ABOUT ME TEXT ===== */
+.about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #FFFFFF;
+}
+.about-text p {
+  margin-bottom: 12px;
+}
+
+/* ===== HIT COUNTER ===== */
+.hit-counter {
+  text-align: center;
+  margin: 20px 0 4px;
+  color: #FFFF00;
+  font-size: 0.85rem;
+}
+.hit-counter-display {
+  font-family: 'Courier New', monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00FF00;
+  background: #000000;
+  border: 3px inset #333333;
+  padding: 8px 20px;
+  display: inline-block;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 10px #00FF00;
+  margin: 12px 0;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  border: none;
+  border-top: 2px dashed #FF00FF;
+  margin: 24px 0;
+}
+
+/* ===== CALCULATOR LAYOUT ===== */
+.calc-instructions {
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.calc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.calc-field label {
+  color: #00FFFF;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.calc-field input,
+.calc-field select {
+  background: #000033;
+  border: 2px solid #FF00FF;
+  color: #FFFF00;
+  padding: 8px;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1rem;
+  width: 100%;
+}
+.calc-field input::placeholder {
+  color: #666699;
+}
+
+/* ===== BUTTONS ===== */
+.btn-90s {
+  background: #FF00FF;
+  color: #000000;
+  border: 3px outset #FF88FF;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 24px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 12px;
+  text-transform: uppercase;
+}
+.btn-90s:hover {
+  background: #FF88FF;
+}
+.btn-90s:active {
+  border-style: inset;
+}
+.btn-small {
+  font-size: 0.8rem;
+  padding: 6px 16px;
+}
+
+/* ===== CALCULATOR RESULT ===== */
+.calc-result,
+.pred-result {
+  text-align: center;
+  padding: 12px;
+  font-size: 1.1rem;
+  min-height: 44px;
+  margin-bottom: 8px;
+}
+.calc-result.success,
+.pred-result.success {
+  color: #00FF00;
+  border: 2px solid #00FF00;
+}
+.calc-result.error,
+.pred-result.error {
+  color: #FF4444;
+  border: 2px solid #FF4444;
+}
+
+/* ===== TABLES (races + predictor results) ===== */
+.table-scroll {
+  overflow-x: auto;
+}
+.race-table,
+.pred-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.race-table th,
+.pred-table th {
+  background: #FF00FF;
+  color: #000000;
+  padding: 8px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+.race-table td,
+.pred-table td {
+  border: 1px solid #FF00FF;
+  padding: 8px 10px;
+  color: #FFFFFF;
+}
+.race-table tr:nth-child(even) td,
+.pred-table tr:nth-child(even) td {
+  background: rgba(255, 0, 255, 0.1);
+}
+.input-row td {
+  color: #FFFF00;
+  font-weight: bold;
+}
+.no-data {
+  text-align: center;
+  color: #FF00FF;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 4px solid #FF00FF;
+  color: #FFFF00;
+  font-size: 0.85rem;
+  margin-top: 20px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 6px auto;
+    max-width: 220px;
+  }
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+  section {
+    padding: 12px;
+  }
+  .btn-90s {
+    width: 100%;
+  }
+  /* Hide Notes column on small screens */
+  .race-table th:nth-child(5),
+  .race-table td:nth-child(5) {
+    display: none;
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kris's Home Page!!</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrapper">
+    <span class="marquee-content">
+      ★ WELCOME TO KRIS'S CORNER OF THE WORLD WIDE WEB ★ BEST VIEWED IN NETSCAPE NAVIGATOR 4.0 ★ 800x600 RESOLUTION RECOMMENDED ★ YOU ARE VISITOR NUMBER ONE MILLION!! ★
+    </span>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="active">🏠 HOME</a>
+    <a href="running.html">🏃 RUNNING ZONE</a>
+  </nav>
+
+  <!-- PAGE TITLE -->
+  <h1 class="page-title">⚡ Kris's Home Page!! ⚡</h1>
+
+  <main>
+
+    <!-- ABOUT ME -->
+    <section>
+      <h2 class="section-title">~~* ABOUT ME *~~</h2>
+      <div class="about-text">
+        <p>
+          Hey there, fellow netizen!! Welcome to MY personal corner of the information superhighway!!
+          My name is <strong style="color:#FF00FF">Kris</strong> and I live in <strong style="color:#FF00FF">New Hampshire</strong>.
+          By day I work as a <strong style="color:#FF00FF">Software Developer</strong> at <a href="https://fullscript.com/careers/engineering" style="color:#FF00FF" target="_blank">Fullscript</a>, but by night I am a dedicated RUNNER!!
+        </p>
+        <p>
+          When I'm not staring at a computer screen (like right now LOL), you can find me out on the roads
+          logging miles and dreaming about my next race!! Check out my
+          <a href="running.html" style="color:#00FFFF">Running Zone</a> for cool tools and race info!!
+        </p>
+        <p style="color:#FF00FF; text-align:center;">
+          <span class="blink">*** THIS SITE IS ALWAYS UNDER CONSTRUCTION!! ***</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- HIT COUNTER -->
+    <section style="text-align:center; border-color:#00FFFF;">
+      <h2 class="section-title" style="border-color:#00FFFF; color:#00FFFF;">YOU ARE VISITOR NUMBER...</h2>
+      <div class="hit-counter">
+        <div id="hit-counter-display" class="hit-counter-display">1,337,042</div>
+        <p style="margin-top:8px; font-size:0.8rem;">since the dawn of the internet!!</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Kris's Home Page!! All Rights Reserved (probably)!!</p>
+    <p style="margin-top:6px; color:#FF00FF;">Made with ❤️, way too much <strong>Comic Sans</strong>, and an unsettling amount of 🤖 AI</p>
+  </footer>
+
+  <script>
+    (function () {
+      let count = 1337042;
+      const el = document.getElementById('hit-counter-display');
+      function tick() {
+        count += Math.floor(Math.random() * 5) + 1;
+        el.textContent = count.toLocaleString();
+        setTimeout(tick, Math.floor(Math.random() * 2000) + 1500);
+      }
+      tick();
+    })();
+  </script>
+</body>
+</html>
