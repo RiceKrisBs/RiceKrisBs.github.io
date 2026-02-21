@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Race Predictor — Kris's Running Zone!!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrapper">
+    <span class="marquee-content">
+      🏆 RACE TIME PREDICTOR 🏆 POWERED BY SCIENCE!! ★ RIEGEL FORMULA ★ PREDICT YOUR NEXT RACE!! 🏆
+    </span>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html">🏠 HOME</a>
+    <a href="pace-calculator.html">⚡ PACE CALC</a>
+    <a href="speed-converter.html">🔄 SPEED</a>
+    <a href="race-predictor.html" class="active">🏆 PREDICTOR</a>
+    <a href="races.html">🏅 RACES</a>
+  </nav>
+
+  <!-- PAGE TITLE -->
+  <h1 class="page-title">🏆 RACE TIME PREDICTOR!! 🏆</h1>
+
+  <main>
+
+    <!-- RACE TIME PREDICTOR -->
+    <section id="race-predictor">
+      <h2 class="section-title">🏆 RACE TIME PREDICTOR 🏆</h2>
+      <p class="calc-instructions">
+        Enter a recent race result!! I'll predict your finish times for all distances using SCIENCE!!
+      </p>
+      <div class="calc-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))">
+        <div class="calc-field">
+          <label for="pred-distance">YOUR RACE DISTANCE</label>
+          <select id="pred-distance">
+            <option value="1609.34">1 Mile</option>
+            <option value="5000">5K</option>
+            <option value="8046.72">5 Mile</option>
+            <option value="10000" selected>10K</option>
+            <option value="15000">15K</option>
+            <option value="16093.4">10 Mile</option>
+            <option value="21097.5">Half Marathon</option>
+            <option value="42195">Marathon</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="pred-time">YOUR FINISH TIME</label>
+          <input type="text" id="pred-time" placeholder="h:mm:ss or m:ss">
+        </div>
+      </div>
+      <button class="btn-90s" onclick="predictRaceTimes()">** PREDICT!! **</button>
+      <div id="pred-result" class="pred-result"></div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Kris's Running Zone!! All Rights Reserved (probably)!!</p>
+    <p style="margin-top:6px; color:#FF00FF;">
+      Race predictions use the <a href="https://en.wikipedia.org/wiki/Peter_Riegel#Race_time_prediction" style="color:#00FFFF" target="_blank">Riegel Formula</a>
+    </p>
+  </footer>
+
+  <script src="js/calculators.js"></script>
+</body>
+</html>

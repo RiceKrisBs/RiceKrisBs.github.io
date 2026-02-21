@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Race Results — Kris's Running Zone!!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrapper">
+    <span class="marquee-content">
+      🏅 RACE RESULTS 🏅 UPCOMING RACES ★ PAST RESULTS ★ LOGGING EVERY MILE!! 🏅
+    </span>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html">🏠 HOME</a>
+    <a href="pace-calculator.html">⚡ PACE CALC</a>
+    <a href="speed-converter.html">🔄 SPEED</a>
+    <a href="race-predictor.html">🏆 PREDICTOR</a>
+    <a href="races.html" class="active">🏅 RACES</a>
+  </nav>
+
+  <!-- PAGE TITLE -->
+  <h1 class="page-title">🏅 RACE RESULTS 🏅</h1>
+
+  <main>
+
+    <!-- UPCOMING RACES -->
+    <section id="upcoming-races">
+      <h2 class="section-title">📅 UPCOMING RACES 📅</h2>
+      <div class="table-scroll">
+        <div id="upcoming-races-table">
+          <p class="no-data">Loading...</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- PAST RACE RESULTS -->
+    <section id="past-races">
+      <h2 class="section-title">🏅 PAST RACE RESULTS 🏅</h2>
+      <div class="table-scroll">
+        <div id="past-races-table">
+          <p class="no-data">Loading...</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Kris's Running Zone!! All Rights Reserved (probably)!!</p>
+  </footer>
+
+  <script src="js/races.js"></script>
+</body>
+</html>

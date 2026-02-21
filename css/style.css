@@ -270,6 +270,21 @@ section {
   font-style: italic;
 }
 
+/* ===== LINK BADGES ===== */
+.link-badge {
+  color: #000000;
+  background: #00FF00;
+  border: 3px outset #88FF88;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 8px 20px;
+  text-decoration: none;
+  display: inline-block;
+}
+.link-badge:hover {
+  background: #88FF88;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;

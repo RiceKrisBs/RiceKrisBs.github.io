@@ -131,6 +131,43 @@ function showResult(el, message, type) {
 }
 
 // ============================================================
+// PACE / SPEED CONVERTER
+// ============================================================
+
+function convertPaceToSpeed(unit) {
+  const other     = unit === 'mile' ? 'km' : 'mile';
+  const factor    = unit === 'mile' ? 0.621371 : 1 / 0.621371; // pace_other = pace_this * factor
+  const paceSecs  = parseTime(document.getElementById(`conv-pace-${unit}`).value.trim());
+  if (!paceSecs || paceSecs <= 0) {
+    ['conv-speed-' + unit, 'conv-pace-' + other, 'conv-speed-' + other].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    return;
+  }
+  const otherPaceSecs = paceSecs * factor;
+  document.getElementById(`conv-speed-${unit}`).value  = (60 / (paceSecs / 60)).toFixed(2);
+  document.getElementById(`conv-pace-${other}`).value  = formatPace(otherPaceSecs);
+  document.getElementById(`conv-speed-${other}`).value = (60 / (otherPaceSecs / 60)).toFixed(2);
+}
+
+function convertSpeedToPace(unit) {
+  const other   = unit === 'mile' ? 'km' : 'mile';
+  const factor  = unit === 'mile' ? 0.621371 : 1 / 0.621371;
+  const speed   = parseFloat(document.getElementById(`conv-speed-${unit}`).value);
+  if (!speed || speed <= 0) {
+    ['conv-pace-' + unit, 'conv-pace-' + other, 'conv-speed-' + other].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    return;
+  }
+  const paceSecs      = (60 / speed) * 60;
+  const otherPaceSecs = paceSecs * factor;
+  document.getElementById(`conv-pace-${unit}`).value   = formatPace(paceSecs);
+  document.getElementById(`conv-pace-${other}`).value  = formatPace(otherPaceSecs);
+  document.getElementById(`conv-speed-${other}`).value = (60 / (otherPaceSecs / 60)).toFixed(2);
+}
+
+// ============================================================
 // RACE TIME PREDICTOR — Riegel Formula: T2 = T1 * (D2/D1)^1.06
 // ============================================================
 
