@@ -13,7 +13,7 @@ body {
     radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px);
   background-size: 50px 50px, 25px 25px;
   background-position: 0 0, 12px 12px;
-  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+  font-family: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', cursive;
   color: #FFFF00;
   min-height: 100vh;
 }
@@ -178,7 +178,7 @@ section {
   border: 2px solid #FF00FF;
   color: #FFFF00;
   padding: 8px;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
   font-size: 1rem;
   width: 100%;
 }
@@ -191,7 +191,7 @@ section {
   background: #FF00FF;
   color: #000000;
   border: 3px outset #FF88FF;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
   font-size: 1rem;
   font-weight: bold;
   padding: 10px 24px;
