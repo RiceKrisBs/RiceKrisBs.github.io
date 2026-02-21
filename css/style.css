@@ -295,11 +295,41 @@ footer {
   margin-top: 20px;
 }
 
+/* ===== HAMBURGER BUTTON ===== */
+.nav-hamburger {
+  display: none;
+  background: #FF00FF;
+  color: #000000;
+  border: 3px outset #FF88FF;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.nav-hamburger:active {
+  border-style: inset;
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 600px) {
+  .nav-hamburger {
+    display: inline-block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .nav-links.open {
+    display: flex;
+  }
   nav a {
     display: block;
-    margin: 6px auto;
+    margin: 0 auto;
     max-width: 220px;
   }
   .calc-grid {
@@ -315,5 +345,12 @@ footer {
   .race-table th:nth-child(5),
   .race-table td:nth-child(5) {
     display: none;
+  }
+}
+
+/* ===== DESKTOP NAV LINKS (always visible) ===== */
+@media (min-width: 601px) {
+  .nav-links {
+    display: inline;
   }
 }
