@@ -263,6 +263,16 @@ section {
   color: #FFFF00;
   font-weight: bold;
 }
+.race-table a {
+  color: #00FFFF;
+  text-decoration: underline;
+}
+.race-table a:visited {
+  color: #88FF88;
+}
+.race-table a:hover {
+  color: #FF00FF;
+}
 .no-data {
   text-align: center;
   color: #FF00FF;

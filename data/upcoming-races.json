@@ -3,42 +3,49 @@
     "date": "2026-04-26",
     "name": "New Castle 10k",
     "distance": "10k",
-    "goal": ""
+    "goal": "",
+    "website": "https://millenniumrunning.com/newcastle/"
   },
   {
     "date": "2026-08-23",
     "name": "AutoFair NH 10 Miler",
     "distance": "10 Mile",
-    "goal": ""
+    "goal": "",
+    "website": "https://millenniumrunning.com/newhampshire10/"
   },
   {
     "date": "2026-10-25",
     "name": "Xfinity Newburyport Half Marathon",
     "distance": "Half Marathon",
-    "goal": ""
+    "goal": "",
+    "website": "https://millenniumrunning.com/newburyport/"
   },
   {
     "date": "2026-10-31",
     "name": "Trick or Trot 3k",
     "distance": "3k",
-    "goal": ""
+    "goal": "",
+    "website": "https://millenniumrunning.com/trick-or-trot/"
   },
   {
     "date": "2026-11-08",
     "name": "Manchester City Marathon",
     "distance": "Marathon",
-    "goal": ""
+    "goal": "",
+    "website": "https://millenniumrunning.com/marathon/"
   },
   {
     "date": "2026-11-26",
     "name": "Fisher Cats Thanksgiving 5k",
     "distance": "5k",
-    "goal": ""
+    "goal": "",
+    "website": "https://millenniumrunning.com/thanksgiving/"
   },
   {
     "date": "2026-12-05",
     "name": "Santa Claus Shuffle",
     "distance": "5k",
-    "goal": ""
+    "goal": "",
+    "website": "https://millenniumrunning.com/santa/"
   }
 ]

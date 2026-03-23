@@ -72,10 +72,13 @@ function renderUpcomingRaces(races) {
       <tbody>
   `;
   for (const race of races) {
+    const raceNameHtml = race.website ?
+      `<a href="${race.website}" target="_blank" rel="noopener noreferrer">${race.name}</a>` :
+      race.name;
     html += `
       <tr>
         <td>${race.date}</td>
-        <td>${race.name}</td>
+        <td>${raceNameHtml}</td>
         <td>${race.distance}</td>
         <td>${race.goal || 'TBD'}</td>
       </tr>
