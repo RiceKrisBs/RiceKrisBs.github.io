@@ -4,9 +4,13 @@
 
 // Parse "h:mm:ss" or "m:ss" to total seconds. Returns null if invalid.
 function parseTime(str) {
-  const parts = str.trim().split(':').map(Number);
-  if (parts.length < 2 || parts.length > 3) return null;
+  const raw = str.trim().split(':');
+  if (raw.length < 2 || raw.length > 3) return null;
+  if (raw.some(p => p.trim() === '')) return null;
+  const parts = raw.map(Number);
   if (parts.some(isNaN) || parts.some(p => p < 0)) return null;
+  // Minutes and seconds (everything after the first part) must be under 60
+  if (parts.slice(1).some(p => p >= 60)) return null;
   if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
   return parts[0] * 60 + parts[1];
 }
@@ -23,8 +27,9 @@ function formatTime(totalSecs) {
 
 // Format pace seconds to "m:ss"
 function formatPace(paceSecs) {
+  paceSecs = Math.round(paceSecs);
   const m = Math.floor(paceSecs / 60);
-  const s = Math.round(paceSecs % 60);
+  const s = paceSecs % 60;
   return `${m}:${pad(s)}`;
 }
 
@@ -76,12 +81,16 @@ function calculatePaceDistanceTime() {
   let timeSecs = hasTime ? parseTime(timeInput) : null;
   if (hasTime && timeSecs === null)
     return showResult(resultEl, 'ERROR: Invalid time format!! Use h:mm:ss or m:ss', 'error');
+  if (hasTime && timeSecs === 0)
+    return showResult(resultEl, 'ERROR: Time must be greater than zero!!', 'error');
 
   // Pace is always entered as per-mile or per-km; convert to per-mile internally
   let paceSecsPerMile = hasPace ? parseTime(paceInput) : null;
   if (hasPace && paceSecsPerMile === null)
     return showResult(resultEl, 'ERROR: Invalid pace format!! Use m:ss (e.g. 8:30)', 'error');
-  if (hasPace && paceUnit === 'km') paceSecsPerMile *= 0.621371;
+  if (hasPace && paceSecsPerMile === 0)
+    return showResult(resultEl, 'ERROR: Pace must be greater than zero!!', 'error');
+  if (hasPace && paceUnit === 'km') paceSecsPerMile /= 0.621371;
 
   // Calculate the missing field
   if (!hasDistance) {
@@ -97,7 +106,7 @@ function calculatePaceDistanceTime() {
     showResult(resultEl, `TIME: ${formatTime(timeSecs)}`, 'success');
   } else {
     paceSecsPerMile = timeSecs / distMiles;
-    const displayPace = paceUnit === 'km' ? paceSecsPerMile / 0.621371 : paceSecsPerMile;
+    const displayPace = paceUnit === 'km' ? paceSecsPerMile * 0.621371 : paceSecsPerMile;
     const paceStr = formatPace(displayPace);
     document.getElementById('calc-pace').value = paceStr;
     lastCalculatedField = 'calc-pace';

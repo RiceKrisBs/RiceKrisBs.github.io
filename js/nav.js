@@ -12,10 +12,12 @@
     if (!nav) return;
 
     const path = window.location.pathname;
-    const page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+    // GitHub Pages serves both /page and /page.html, so compare without the extension
+    const stripExt = name => name.replace(/\.html$/, '');
+    const page = stripExt(path.substring(path.lastIndexOf('/') + 1) || 'index.html');
 
     const linksHtml = NAV_LINKS.map(({ href, label }) => {
-      const active = href === page ? ' class="active"' : '';
+      const active = stripExt(href) === page ? ' class="active"' : '';
       return `<a href="${href}"${active}>${label}</a>`;
     }).join('\n      ');
 
