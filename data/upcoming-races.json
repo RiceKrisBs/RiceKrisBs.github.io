@@ -1,23 +1,9 @@
 [
   {
-    "date": "2026-10-25",
-    "name": "Xfinity Newburyport Half Marathon",
-    "distance": "Half Marathon",
-    "goal": "",
-    "website": "https://millenniumrunning.com/newburyport/"
-  },
-  {
-    "date": "2026-10-31",
-    "name": "Trick or Trot 3k",
-    "distance": "3k",
-    "goal": "",
-    "website": "https://millenniumrunning.com/trick-or-trot/"
-  },
-  {
     "date": "2026-11-08",
     "name": "Manchester City Marathon",
     "distance": "Marathon",
-    "goal": "",
+    "goal": "Finish",
     "website": "https://millenniumrunning.com/marathon/"
   },
   {
@@ -37,8 +23,8 @@
   {
     "date": "2027-05-01",
     "name": "White Lake Ultras",
-    "distance": "50 miles",
-    "goal": "12h",
+    "distance": "12 hours",
+    "goal": "TBD",
     "website": "https://www.aravaiparunning.com/white-mountain-endurance/white-lake-ultras/"
   }
 ]

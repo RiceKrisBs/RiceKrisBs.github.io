@@ -47,5 +47,18 @@
     "distance": "10 Mile",
     "time": "1:52:44",
     "notes": ""
+  },
+  {
+    "date": "2026-10-25",
+    "name": "Xfinity Newburyport Half Marathon",
+    "distance": "Half Marathon",
+    "time": "2:24:41",
+    "notes": ""
+  },
+  {
+    "date": "2026-10-31",
+    "name": "Trick or Trot 3k",
+    "distance": "3k",
+    "time": "16:26"
   }
 ]
